@@ -4,17 +4,21 @@ import CartTotal from '../CartTotal/CartTotal';
 import CartContents from '../CartContents/CartContents';
 
 
-class Cart extends Component{
-    render() {
-        return (
-            <div className="Cart">
-                <h2>Your cart</h2>
-                {/* {summary} */}
-            <CartContents summary={this.props.summary}/>
-            <CartTotal summary={this.props.summary}/>
-            </div>
-        )
-    }
+function Cart(props) {
+    return (
+        <section className="main__summary">
+            <h2>Your cart</h2>
+            <CartContents
+            summary={props.summary}
+            />
+
+            
+
+            <CartTotal
+            USCurrencyFormat={props.USCurrencyFormat}
+            total={props.total}/>
+          </section>
+    )
 }
 
 export default Cart;
